@@ -7,26 +7,15 @@ import SearchTodos from "./components/TodoList";
 const AppLink = ({ to, children }) => {
   return <NavLink to={to}>{children}</NavLink>;
 };
-// Second variant
-const AppLinkSecond = (props) => {
-  return <NavLink {...props} />;
-};
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
         <nav>
-          {/* without HOC */}
-          {/* <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contacts">Contacts</NavLink> */}
-
-          {/* with HOC */}
           <AppLink to={"/"}>Home</AppLink>
           <AppLink to={"/about"}>About</AppLink>
           <AppLink to={"/contacts"}>Contacts</AppLink>
-          <AppLinkSecond to={"/Test"}>Test</AppLinkSecond>
         </nav>
         <h2>Higher Order Component</h2>
         <div className="wrapper">
