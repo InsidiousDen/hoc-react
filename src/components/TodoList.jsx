@@ -1,5 +1,5 @@
 import React from "react";
-import HOC from "./HOC";
+import FilterData from "./hoc/FilterData";
 
 const TodoList = ({ data }) => {
   let renderTodos = data.map((todo) => {
@@ -18,6 +18,6 @@ const TodoList = ({ data }) => {
   );
 };
 
-const SearchTodos = HOC(TodoList, "todos");
+const SearchTodos = FilterData(TodoList, "todos");
 
 export default SearchTodos;

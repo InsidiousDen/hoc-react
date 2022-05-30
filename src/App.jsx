@@ -1,7 +1,8 @@
-import { NavLink, BrowserRouter } from "react-router-dom";
+import { NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import SearchUsers from "./components/UserList";
-import SearchTodos from "./components/TodoList";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 // Create new Component for reusing some features
 const AppLink = ({ to, children }) => {
@@ -15,13 +16,14 @@ const App = () => {
         <nav>
           <AppLink to={"/"}>Home</AppLink>
           <AppLink to={"/about"}>About</AppLink>
-          <AppLink to={"/contacts"}>Contacts</AppLink>
+          <AppLink to={"/contact"}>Contacts</AppLink>
         </nav>
         <h2>Higher Order Component</h2>
-        <div className="wrapper">
-          <SearchUsers />
-          <SearchTodos />
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

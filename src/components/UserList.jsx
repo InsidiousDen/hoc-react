@@ -1,5 +1,5 @@
 import React from "react";
-import HOC from "./HOC";
+import FilterData from "./hoc/FilterData";
 
 const UsersList = ({ data }) => {
   let renderUsers = data.map((user) => {
@@ -17,6 +17,6 @@ const UsersList = ({ data }) => {
     </div>
   );
 };
-const SearchUsers = HOC(UsersList, "users");
+const SearchUsers = FilterData(UsersList, "users");
 
 export default SearchUsers;

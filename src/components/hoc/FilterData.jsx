@@ -1,6 +1,6 @@
 // import React from "react";
 
-// const HOC = (WrappedComponenet, entity) => {
+// const FilterData = (WrappedComponenet, entity) => {
 //   return class extends React.Component {
 //     state = {
 //       data: [],
@@ -45,11 +45,11 @@
 //   };
 // };
 
-// export default HOC;
+// export default FilterData;
 
 import React, { useEffect, useState } from "react";
 
-const HOC = (WrappedComponenet, entity) => {
+const FilterData = (WrappedComponenet, entity) => {
   const ChildrenComponent = () => {
     const [data, setData] = useState([]);
     const [term, setTerm] = useState("");
@@ -89,4 +89,4 @@ const HOC = (WrappedComponenet, entity) => {
   return ChildrenComponent;
 };
 
-export default HOC;
+export default FilterData;
