@@ -1,10 +1,11 @@
 import React from "react";
-import SetRandomColor from "./hoc/SetRandomColor";
+import useRandomColor from "./hook/useRandomColor";
 
-const Contact = (props) => {
+const Contact = () => {
+  const { className } = useRandomColor();
   return (
     <div>
-      <div className="container">
+      <div className={className}>
         <h4>Contact</h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
@@ -16,4 +17,4 @@ const Contact = (props) => {
     </div>
   );
 };
-export default SetRandomColor(Contact);
+export default Contact;
