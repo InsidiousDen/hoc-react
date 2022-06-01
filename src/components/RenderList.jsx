@@ -5,7 +5,6 @@ import useInput from "./hook/useInput";
 const RenderList = ({ type }) => {
   const { term, onChange } = useInput();
   const { data } = useFilterData(type, term);
-
   let renderList = data.map((item) => {
     return (
       <div key={item.id}>

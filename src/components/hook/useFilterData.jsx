@@ -17,8 +17,7 @@ const useFilterData = (entity, term) => {
     if (entity === "users") {
       const { name } = d;
       return name.indexOf(term) >= 0;
-    }
-    if (entity === "todos") {
+    } else {
       const { title } = d;
       return title.indexOf(term) >= 0;
     }

@@ -10,6 +10,7 @@ const Home = () => {
       <SearchTodos /> */}
       <RenderList type="users" />
       <RenderList type="todos" />
+      <RenderList type="posts" />
     </div>
   );
 };
