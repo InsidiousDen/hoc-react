@@ -1,11 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
+import { DataType } from "../types/types";
 import useFilterData from "./hook/useFilterData";
 import useInput from "./hook/useInput";
 
-const RenderList = ({ type }) => {
+interface RenderListProps {
+  type: string;
+}
+
+const RenderList: FC<RenderListProps> = ({ type }) => {
   const { term, onChange } = useInput();
   const { data } = useFilterData(type, term);
-  let renderList = data.map((item) => {
+  let renderList = data.map((item: DataType) => {
     return (
       <div key={item.id}>
         <p>

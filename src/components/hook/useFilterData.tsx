@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { DataType } from "../../types/types";
 
-const useFilterData = (entity, term) => {
-  const [data, setData] = useState([]);
-
+const useFilterData = (entity: string, term: string) => {
+  const [data, setData] = useState<DataType[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`https://jsonplaceholder.typicode.com/${entity}`);
@@ -13,7 +13,7 @@ const useFilterData = (entity, term) => {
     fetchData();
   }, []);
 
-  let filteredData = data.slice(0, 10).filter((d) => {
+  let filteredData = data.slice(0, 10).filter((d: DataType) => {
     if (entity === "users") {
       const { name } = d;
       return name.indexOf(term) >= 0;

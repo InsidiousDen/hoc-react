@@ -1,12 +1,10 @@
 import React from "react";
-import useRandomColor from "./hook/useRandomColor";
 
-const Contact = () => {
-  const { className } = useRandomColor();
+const About = () => {
   return (
     <div>
-      <div className={className}>
-        <h4>Contact</h4>
+      <div className="container">
+        <h4>About</h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
           repudiandae repellat illo magni eligendi cupiditate voluptates eius
@@ -17,4 +15,5 @@ const Contact = () => {
     </div>
   );
 };
-export default Contact;
+
+export default About;
